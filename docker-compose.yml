@@ -1,11 +1,12 @@
-postgres:
-  container_name: postgres
-  restart: always
-  image: postgres:16.2-alpine3.19
+services:
+  postgres:
+    container_name: postgres
+    restart: always
+    image: postgres:16.2-alpine3.19
 
-  volumes:
-    - ./database:/var/lib/postgresql/data
-  ports:
-    - 5432:5432
-  environment:
-    - POSTGRES_PASSWORD=secret
+    volumes:
+      - ./database:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_PASSWORD=secret
