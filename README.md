@@ -139,3 +139,31 @@ You need to create a Github Personal Access Token to give Backstage permissions 
 5. Your repository should be created, you can view it either in github or backstage by using the links provided.
 
 ![new-component-5](./screenshots/new-component-5.png)
+
+## Install the Tech Radar Plugin
+
+We are going to add a single plugin to see what that process entails. The Tech Radar plugin was chosen for simplicity.
+
+1. Add the package.
+
+From your Backstage root directory
+```
+yarn --cwd packages/app add @backstage-community/plugin-tech-radar
+```
+
+2. Modify your app routes to include the Router component exported from the tech radar, for example:
+
+```
+// In packages/app/src/App.tsx
+import { TechRadarPage } from '@backstage-community/plugin-tech-radar';
+
+const routes = (
+  <FlatRoutes>
+    {/* ...other routes */}
+    <Route
+      path="/tech-radar"
+      element={<TechRadarPage width={1500} height={800} />}
+    />
+```
+
+3. Restart the app with `(ctrl+c)` followed by `yarn dev` and navigate to http://localhost:3000/tech-radar
