@@ -85,3 +85,7 @@ If you go view your `ms-demo` system you will see the connections have been gene
 ![system-graph](./screenshots/system-graph.png)
 
 ## Tech Docs
+
+You can explore the Docs of any of the entities that have been added. The docs component reads any documentation in markdown format that is present inside a `docs` directory and displays it within the Backstage portal.
+
+## Scaffolding a service
