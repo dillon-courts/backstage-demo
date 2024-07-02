@@ -67,7 +67,7 @@ Use the same process as above to add additional components of the system.
 Add at least the following components so you can see how they fit together. You can add additional components if you'd like, each service within the [src directory](https://github.com/dillon-courts/gcp-microservices-demo/tree/main/src) contains a `catalog-info.yaml` file.
 
 - https://github.com/dillon-courts/gcp-microservices-demo/blob/main/src/adservice/catalog-info.yaml
-- https://github.com/dillon-courts/gcp-microservices-demo/tree/main/src/cartservice
+- https://github.com/dillon-courts/gcp-microservices-demo/blob/main/src/cartservice/catalog-info.yaml
 - https://github.com/dillon-courts/gcp-microservices-demo/blob/main/src/checkoutservice/catalog-info.yaml
 
 1. Go to the create section
