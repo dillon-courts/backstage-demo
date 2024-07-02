@@ -89,3 +89,53 @@ If you go view your `ms-demo` system you will see the connections have been gene
 You can explore the Docs of any of the entities that have been added. The docs component reads any documentation in markdown format that is present inside a `docs` directory and displays it within the Backstage portal.
 
 ## Scaffolding a service
+
+Scaffolding a service allows the creation of a new repository based on a template. You can use this to allow self service of new repository creation with your organization standards.
+
+There are two steps to this process.
+
+### Add a Github Personal Access Token
+
+You need to create a Github Personal Access Token to give Backstage permissions to create a new repository within your account.
+
+1. Navigate to Developer Settings on your Github Account. Profile -> Settings -> Developer Settings -> Tokens Classic -> Generate Token -> Generate New Token (Classic).
+
+![create-token-1](./screenshots/create-token-1.png)
+
+![create-token-2](./screenshots/create-token-2.png)
+
+![create-token-3](./screenshots/create-token-3.png)
+
+2. Select the `repo` & `workflow` permissions and generate the token.
+
+![create-token-4](./screenshots/create-token-4.png)
+
+3. Copy the generated token and paste it into your Backstage `app-config.yaml` file in the integrations section.
+
+![create-token-5](./screenshots/create-token-5.png)
+
+4. Restart Backstage 
+- `(ctrl+c)`
+- `yarn dev`
+
+### Create a new Repository
+
+1. Navigate to the `Create` page and add click the `Choose` button on the NodeJS template.
+
+![new-component-1](./screenshots/new-component-1.png)
+
+2. Enter a name for your component. This is the name that will be used in the `catalog-info.yml` file, so it will be the same name shown in backstage. Click `Next`.
+
+![new-component-2](./screenshots/new-component-2.png)
+
+3. Enter the `owner` as your github username and enter a name for the repository. Click `Review`.
+
+![new-component-3](./screenshots/new-component-3.png)
+
+4. Click `Create`.
+
+![new-component-4](./screenshots/new-component-4.png)
+
+5. Your repository should be created, you can view it either in github or backstage by using the links provided.
+
+![new-component-5](./screenshots/new-component-5.png)
