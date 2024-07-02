@@ -7,19 +7,7 @@ app:
 
 organization:
   name: My Company
-kubernetes:
-  serviceLocatorMethod:
-    type: 'multiTenant'
-  clusterLocatorMethods:
-    - type: 'config'
-      clusters:
-        - url: https://127.0.0.1:32769
-          name: minikube
-          authProvider: 'serviceAccount'
-          skipTLSVerify: true
-          skipMetricsLookup: true
-          serviceAccountToken: eyJhbGciOiJSUzI1NiIsImtpZCI6Im1QaUdGaXFqOW9NSGV4aVZTVTFFbUZTRzlkUEx3aTVWYm1YbnFiN1dBWjgifQ.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6InNhLWRlZmF1bHQiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC5uYW1lIjoiZGVmYXVsdCIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50LnVpZCI6IjczMTA3ZTNlLWViMjktNDYyZC1hNmFiLTc4NjFlN2FhMWI1MCIsInN1YiI6InN5c3RlbTpzZXJ2aWNlYWNjb3VudDpkZWZhdWx0OmRlZmF1bHQifQ.MHl9Ar7n4uz1WgFuNo7Wqh0vhRQzLYyd--rGtFZnZD_-057KyqnT0gnCXflcV1CA-MVRi3Y55jZaNA4E2LybiCqvcoqHE1n1c-75-B0jByrW0b3hKQ1kY0vE8FWp7Qkxkc11piNWhTH8RUQsZZXb1MVGY6N8GgnTomWVvx1nIQQdYPdvZ1A_km4sQ4Z115gA1f9DlCnXml5cdaM4qGYlPmdoUzrmlDIxjw6R86y6wQb6fAuzZgSUYKe4GwoEyLjhpmh2sTaPMMqrknF4TTH1VunI-6SUQ9lfgq1YLYT-P7oc7K2v33YqzCcrR66cv1PGtJTgwUBE8jYVYmCfvZ1y1Q
-          caFile: /Users/dilloncourts/.minikube/profiles/minikube/client.pem
+
 backend:
   # Used for enabling authentication, secret is shared by all backend plugins
   # See https://backstage.io/docs/auth/service-to-service-auth for
@@ -53,12 +41,12 @@ backend:
       password: secret
   # workingDirectory: /tmp # Use this to configure a working directory for the scaffolder, defaults to the OS temp-dir
 
-# integrations:
-  # github:
-    # - host: github.com
+integrations:
+  github:
+    - host: github.com
       # This is a Personal Access Token or PAT from GitHub. You can find out how to generate this token, and more information
-      # about setting up the GitHub integration here: https://backstage.io/docs/getting-started/configuration#setting-up-a-github-integration
-      # token: ${GITHUB_TOKEN}
+      # about setting up the GitHub integration here: https://backstage.io/docs/integrations/github/locations#configuration
+      token: $GITHUB_TOKEN
     ### Example for how to add your GitHub Enterprise instance using the API:
     # - host: ghe.example.net
     #   apiBaseUrl: https://ghe.example.net/api/v3
@@ -71,11 +59,6 @@ proxy:
   #   '/test':
   #     target: 'https://example.com'
   #     changeOrigin: true
-  # '/cortex':
-  #   target: ${CORTEX_BACKEND_HOST_URL}
-  #   headers:
-  #     Authorization: Bearer ${CORTEX_TOKEN}
-  #   allowedHeaders: ['x-cortex-email', 'x-cortex-name']
 
 # Reference documentation http://backstage.io/docs/features/techdocs/configuration
 # Note: After experimenting with basic setup, use CI/CD to generate docs
@@ -90,7 +73,9 @@ techdocs:
 
 auth:
   # see https://backstage.io/docs/auth/ to learn about auth providers
-  providers: {}
+  providers:
+    # See https://backstage.io/docs/auth/guest/provider
+    guest: {}
 
 scaffolder:
   # see https://backstage.io/docs/features/software-templates/configuration for software template options
@@ -108,12 +93,6 @@ catalog:
 
     # Local example template
     - type: file
-      target: ../../examples/template/template2.yaml
-      rules:
-        - allow: [Template]
-
-        # Local example template
-    - type: file
       target: ../../examples/template/template.yaml
       rules:
         - allow: [Template]
@@ -128,7 +107,7 @@ catalog:
     # - type: url
     #   target: https://github.com/backstage/backstage/blob/master/packages/catalog-model/examples/all.yaml
 
-    # # Uncomment these lines to add an example org
+    ## Uncomment these lines to add an example org
     # - type: url
     #   target: https://github.com/backstage/backstage/blob/master/packages/catalog-model/examples/acme-corp.yaml
     #   rules:

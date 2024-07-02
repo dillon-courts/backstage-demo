@@ -13,7 +13,7 @@ backend:
   # all interfaces, the most permissive setting. The right value depends on your specific deployment.
   listen: ':7007'
 
-  # config options: https://node-postgres.com/api/client
+  # config options: https://node-postgres.com/apis/client
   database:
     client: pg
     connection:
@@ -27,6 +27,10 @@ backend:
       # ssl:
       #   ca: # if you have a CA file and want to verify it you can uncomment this section
       #     $file: <file-path>/ca/server.crt
+
+auth:
+  providers:
+    guest: null
 
 catalog:
   # Overrides the default list locations from app-config.yaml as these contain example data.
