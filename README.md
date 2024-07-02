@@ -14,7 +14,6 @@ docker compose up
 ### Start Backstage
 Open another terminal if needed and run the following commands:
 ```sh
-yarn install
 yarn dev
 ```
 
