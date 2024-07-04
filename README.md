@@ -165,4 +165,19 @@ const routes = (
     />
 ```
 
-3. Restart the app with `(ctrl+c)` followed by `yarn dev` and navigate to http://localhost:3000/tech-radar
+3. Add a link to the side bar:
+```
+// In packages/app/src/components/Root/Root.tsx
+        {/* End global nav */}
+        <SidebarDivider />
+        <SidebarScrollWrapper>
+          {
+            <SidebarItem icon={CreateComponentIcon} to="tech-radar" text="Tech Radar" />
+          /* Items in this group will be scrollable if they run out of space */
+          }
+        </SidebarScrollWrapper>
+      </SidebarGroup>
+```
+![tech-radar](./screenshots/tech-radar.png)
+
+3. Restart the app with `(ctrl+c)` followed by `yarn dev` and either click the new link in the side bar or navigate directly to http://localhost:3000/tech-radar
