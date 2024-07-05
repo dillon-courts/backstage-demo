@@ -3,6 +3,8 @@
 # Workshop
 This workshop is designed to be run leveraging VSCode DevContainers. After cloning this repository re-open it in a dev container. This should begin the `yarn install` process, ensure it is running and wait for it to finish. If it does not run automatically you can open a terminal within vscode and run the command yourself.
 
+![dev-container](./screenshots/dev-container.png)
+
 ## Start Backstage
 
 ### Stand Up Database
