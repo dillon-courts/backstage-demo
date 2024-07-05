@@ -23,7 +23,7 @@ yarn dev
 Backstage will open on http://localhost:3000. You can explore the different components of backstage.
 
 #### Home
-In this view you can view the different `entity types` available by default in Backstage. You can add your own if you'd like. By default Backstage comes with:
+In this view you can view the different `entity types` available by default in Backstage. You can even add your own if you'd like. By default Backstage comes with:
 - Component
 - Group
 - Location
@@ -31,7 +31,7 @@ In this view you can view the different `entity types` available by default in B
 - Template
 - User
 
-This repo comes with the group `cool-kids` and the default `Node.js` template. We will add other entities throughout the workshop.
+This repo will be mostly empty except for the default `Node.js` template. We will add other entities throughout the workshop.
 
 #### APIs
 There won't be anything here yet.
@@ -71,6 +71,7 @@ Add at least the following components so you can see how they fit together. You 
 - https://github.com/dillon-courts/gcp-microservices-demo/blob/main/src/adservice/catalog-info.yaml
 - https://github.com/dillon-courts/gcp-microservices-demo/blob/main/src/cartservice/catalog-info.yaml
 - https://github.com/dillon-courts/gcp-microservices-demo/blob/main/src/checkoutservice/catalog-info.yaml
+- https://github.com/dillon-courts/gcp-microservices-demo/blob/main/src/frontend/catalog-info.yaml
 
 1. Go to the create section
 2. Click `Register Existing Component`
