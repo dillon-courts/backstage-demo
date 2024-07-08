@@ -1,6 +1,7 @@
 app:
   title: Scaffolded Backstage App
   baseUrl: http://localhost:3000
+  # baseUrl: http://scaling-pancake-4qxx97gpgg3jxqx-3000.app.github.dev # NOTE the lack of https
   listen:
     host: 0.0.0.0
     port: 3000
@@ -16,6 +17,7 @@ backend:
   #   keys:
   #     - secret: ${BACKEND_SECRET}
   baseUrl: http://localhost:7007
+  # baseUrl: https://scaling-pancake-4qxx97gpgg3jxqx-7007.app.github.dev # NOTE the change to -7007
   listen:
     port: 7007
     # Uncomment the following host directive to bind to specific interfaces
@@ -26,6 +28,7 @@ backend:
     # Default Helmet Content-Security-Policy values can be removed by setting the key to false
   cors:
     origin: http://localhost:3000
+    # origin: https://scaling-pancake-4qxx97gpgg3jxqx-3000.app.github.dev # NOTE https here as well
     methods: [GET, HEAD, PATCH, POST, PUT, DELETE]
     credentials: true
   # This is for local development only, it is not recommended to use this in production
